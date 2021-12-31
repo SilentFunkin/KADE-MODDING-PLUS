@@ -1,0 +1,7 @@
+Make sure ur character xml names match the names in these placeholders
+
+
+Use the character guide sheet and put your animation frames in there.
+
+
+-Silent Funkin
