@@ -332,7 +332,7 @@ class PlayState extends MusicBeatState
 			default:
 			{
 					defaultCamZoom = 0.9;
-					curStage = 'stage1';
+					curStage = 'stage';
 					var bg:FlxSprite = new FlxSprite(-600, -200).loadGraphic(Paths.image('stageback'));
 					bg.antialiasing = true;
 					bg.scrollFactor.set(0.9, 0.9);
@@ -560,6 +560,33 @@ class PlayState extends MusicBeatState
 			FlxG.save.data.scrollSpeed = rep.replay.noteSpeed;
 			FlxG.save.data.downscroll = rep.replay.isDownscroll;
 			// FlxG.watch.addQuick('Queued',inputsQueued);
+		}
+
+		var video:MP4Handler;
+
+		function playCutscene(name:String)
+		{
+			inCutscene = true;
+
+			video = new MP4Handler();
+			video.finishCallback = function()
+			{
+				startCountdown();
+			}
+			video.playVideo(Paths.video(name));
+		}
+
+		function playEndCutscene(name:String)
+		{
+			inCutscene = true;
+
+			video = new MP4Handler();
+			video.finishCallback = function()
+			{
+				SONG = Song.loadFromJson(storyPlaylist[0].toLowerCase());
+				LoadingState.loadAndSwitchState(new PlayState());
+			}
+			video.playVideo(Paths.video(name));
 		}
 
 		var doof:DialogueBox = new DialogueBox(false, dialogue);

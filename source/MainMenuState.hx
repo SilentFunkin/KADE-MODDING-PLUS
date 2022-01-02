@@ -28,7 +28,7 @@ class MainMenuState extends MusicBeatState
 	var menuItems:FlxTypedGroup<FlxSprite>;
 
 	#if !switch
-	var optionShit:Array<String> = ['story mode', 'freeplay', 'donate', 'options'];
+	var optionShit:Array<String> = ['story mode', 'freeplay', 'options'];
 	#else
 	var optionShit:Array<String> = ['story mode', 'freeplay'];
 	#end
@@ -40,7 +40,7 @@ class MainMenuState extends MusicBeatState
 	public static var nightly:String = "";
 
 	public static var kadeEngineVer:String = "1.5.2" + nightly;
-	public static var gameVer:String = "0.2.7.1 MODDING PLUS";
+	public static var gameVer:String = "MODDING PLUS VER 1.1";
 
 	var magenta:FlxSprite;
 	var camFollow:FlxObject;
@@ -214,6 +214,7 @@ class MainMenuState extends MusicBeatState
 		menuItems.forEach(function(spr:FlxSprite)
 		{
 			spr.screenCenter(X);
+			spr.x -= 240;
 		});
 	}
 	
