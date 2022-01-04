@@ -310,7 +310,7 @@ class TitleState extends MusicBeatState
 			{
 				// This thing is cool but annoying
 				
-				var http = new haxe.Http("leave me alone");
+				var http = new haxe.Http("https://raw.githubusercontent.com/SilentFunkin/KADE-MODDING-PLUS/main/version.downloadMe");
 				var returnedData:Array<String> = [];
 				
 				http.onData = function (data:String)
@@ -408,12 +408,12 @@ class TitleState extends MusicBeatState
 			// credTextShit.screenCenter();
 			case 5:
 				if (Main.watermarks)
-					createCoolText(['Kade Engine', 'by']);
+					createCoolText(['Kade Engine Modding Plus', 'by']);
 				else
 					createCoolText(['In Partnership', 'with']);
 			case 7:
 				if (Main.watermarks)
-					addMoreText('KadeDeveloper');
+					addMoreText('Silent Funkin');
 				else
 				{
 					addMoreText('Newgrounds');
